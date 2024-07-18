@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: OmniScrape
+Version: 0.1.0
+Summary: Scraping the GEO database for ALL scRNA-seq datasets.
+Author: Jake Lehle
+Author-email: jlehle@txbiomed.org
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Requires-Dist: click
+Requires-Dist: ruamel.yaml
+Requires-Dist: snakemake
