@@ -17,12 +17,12 @@ def get_default_optional_parameters():
 
         return default_optionals
 
-def get_default_config(genome_build, cores_per_job, output_dir):
+def get_default_config(genome_build, cores_per_job, nodes, output_dir):
 
     mandatory_parameters = {
         'output_dir': os.path.abspath(output_dir),
         'computing_threads': cores_per_job,
-        'nodes': nodes_per_job
+        'nodes': nodes
     }
 
     optional_parameters = get_default_optional_parameters()
@@ -40,8 +40,8 @@ def dump_config(config_dict, target_file):
         yaml.dump(config_dict, f)
 
 
-def create_config(genome_build, cores_per_job, output_dir, target_yaml):
+def create_config(genome_build, cores_per_job, nodes, output_dir, target_yaml):
 
-    config_yaml = get_default_config(genome_build, cores_per_job, output_dir)
+    config_yaml = get_default_config(genome_build, cores_per_job, nodes, output_dir)
 
     dump_config(config_yaml, target_yaml)
