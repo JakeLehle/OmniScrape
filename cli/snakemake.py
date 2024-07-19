@@ -9,7 +9,7 @@ conda_prefix = os.path.abspath(os.path.join(script_dir, '..', 'snakemake_wrapper
 
 def run_from_config(dry_run, config_yaml, cores, cluster_command, nodes):
 
-    print("[INFO] Invoking Snakemake with config {} and {} cores.".format(config_yaml, cores))
+    print("[INFO] Invoking Snakemake with config {}, {} cores, and {} nodes.".format(config_yaml, cores, nodes))
 
     finished_successfully = snakemake.snakemake(
         snakefile=snakefile_location,
@@ -24,15 +24,17 @@ def run_from_config(dry_run, config_yaml, cores, cluster_command, nodes):
         cluster=cluster_command
     )
     if not os.path.exists(output_dir):
-	os.mkdir(output_dir)    
+        os.mkdir(output_dir)    
+
 
     if not finished_successfully:
         os.sys.exit(os.EX_SOFTWARE)
 
 
-def create_cofig(genome_build, cores, output_dir, yaml_config_file):
+def create_cofig(genome_build, cores, nodes, output_dir, yaml_config_file):
 
     if not os.path.exists(output_dir):
         os.mkdir(output_dir)
 
-    yaml_config_file = os.path.join(output_dir, 'config.yaml')
+
+        yaml_config_file = os.path.join(output_dir, 'config.yaml')
